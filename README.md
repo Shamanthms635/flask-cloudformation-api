@@ -122,19 +122,9 @@ The IAM user for this project should have either:
 
 ---
 
-## 🧑‍💻 Author
+## 🧑‍💻 Done by
 
 **Shamanth MS**  
 ---
 
-## 🏁 Future Improvements (Optional)
 
-- Add authentication to the Flask API
-- Log CloudFormation change history
-- Create a frontend UI to control the updates visually
-
----
-
-## 📝 License
-
-This project is for educational and job evaluation purposes only.
