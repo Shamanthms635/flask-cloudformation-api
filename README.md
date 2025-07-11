@@ -124,9 +124,7 @@ The IAM user for this project should have either:
 
 ## 🧑‍💻 Author
 
-**Shammi Raj**  
-Guided by: ChatGPT (OpenAI)
-
+**Shamanth MS**  
 ---
 
 ## 🏁 Future Improvements (Optional)
