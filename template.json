@@ -1,0 +1,42 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "Import existing VPC, Subnet, IGW, and Route Table",
+  "Resources": {
+    "MyVPC": {
+      "Type": "AWS::EC2::VPC",
+      "Properties": {
+        "CidrBlock": "10.0.0.0/16",
+        "EnableDnsSupport": true,
+        "EnableDnsHostnames": true,
+        "Tags": [{ "Key": "Name", "Value": "MyAssignmentVPC" }]
+      },
+      "DeletionPolicy": "Retain"
+    },
+    "MySubnet": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "VpcId": { "Ref": "MyVPC" },
+        "CidrBlock": "10.0.100.0/24",
+        "AvailabilityZone": "ap-southeast-2a",
+        "MapPublicIpOnLaunch": true,
+        "Tags": [{ "Key": "Name", "Value": "MyPublicSubnet" }]
+      },
+      "DeletionPolicy": "Retain"
+    },
+    "MyInternetGateway": {
+      "Type": "AWS::EC2::InternetGateway",
+      "Properties": {
+        "Tags": [{ "Key": "Name", "Value": "MyInternetGateway" }]
+      },
+      "DeletionPolicy": "Retain"
+    },
+    "MyRouteTable": {
+      "Type": "AWS::EC2::RouteTable",
+      "Properties": {
+        "VpcId": { "Ref": "MyVPC" },
+        "Tags": [{ "Key": "Name", "Value": "MyRouteTable" }]
+      },
+      "DeletionPolicy": "Retain"
+    }
+  }
+}
